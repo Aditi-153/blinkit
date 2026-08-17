@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 
 import userRouter from "./routes/user.routes.js";
 import itemRouter from "./routes/items.routes.js";
@@ -12,7 +13,12 @@ import addressRouter from "./routes/address.routes.js";
 dotenv.config();
 
 const app = express();
-
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  }),
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());

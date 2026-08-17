@@ -1,0 +1,590 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================
+   REGISTER PAGE
+========================================= */
+
+.register-page {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  overflow: hidden;
+
+  /*
+    Same yellow family as Login page
+  */
+  background: #ffca28;
+}
+
+/* =========================================
+   OLD LEFT SECTION
+   Not needed in new design
+========================================= */
+
+.register-left {
+  display: none;
+}
+
+.register-right {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+/* =========================================
+   DECORATIVE CIRCLES
+   Same style as Login page
+========================================= */
+
+.register-circle {
+  position: absolute;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.18);
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+/* Top right circle */
+
+.circle-right {
+  width: 260px;
+  height: 260px;
+
+  top: -35px;
+  right: -35px;
+}
+
+/* Left circle */
+
+.circle-left {
+  width: 210px;
+  height: 210px;
+
+  left: -60px;
+  top: 42%;
+
+  transform: translateY(-50%);
+}
+
+/* =========================================
+   REGISTER CARD
+========================================= */
+
+.register-card {
+  width: 760px;
+
+  max-width: calc(100% - 40px);
+
+  background: #ffffff;
+
+  border-radius: 24px;
+
+  padding: 42px 52px 34px;
+
+  position: relative;
+
+  z-index: 2;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.08);
+
+  animation: cardAppear 0.4s ease;
+}
+
+/* =========================================
+   CARD ANIMATION
+========================================= */
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================
+   BLINKIT LOGO
+========================================= */
+
+.blinkit-logo {
+  text-align: center;
+
+  margin-bottom: 16px;
+
+  font-size: 58px;
+
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: -4px;
+
+  color: #111111;
+}
+
+.blinkit-logo span {
+  color: #008f16;
+}
+
+/* =========================================
+   CARD HEADER
+========================================= */
+
+.card-header {
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
+.card-header h1 {
+  margin: 0 0 8px;
+
+  font-size: 27px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+
+  color: #111111;
+}
+
+.card-header p {
+  margin: 0;
+
+  font-size: 18px;
+
+  color: #555555;
+}
+
+/* =========================================
+   INPUT GROUP
+========================================= */
+
+.input-group {
+  width: 100%;
+
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+
+  margin-bottom: 9px;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  color: #111111;
+}
+
+/* =========================================
+   INPUT WRAPPER
+========================================= */
+
+.input-wrapper {
+  width: 100%;
+
+  height: 60px;
+
+  display: flex;
+
+  align-items: center;
+
+  border: 1px solid #d5d5d5;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  transition: 0.2s ease;
+}
+
+.input-wrapper:focus-within {
+  border-color: #008f16;
+
+  box-shadow:
+    0 0 0 2px rgba(0, 143, 22, 0.08);
+}
+
+/* =========================================
+   INPUT ICON
+========================================= */
+
+.input-icon {
+  width: 68px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  font-size: 22px;
+
+  color: #111111;
+}
+
+/* =========================================
+   INPUT
+========================================= */
+
+.input-wrapper input {
+  width: 100%;
+
+  height: 100%;
+
+  padding: 0 18px 0 0;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  font-size: 17px;
+
+  color: #222222;
+}
+
+.input-wrapper input::placeholder {
+  color: #999999;
+}
+
+/* =========================================
+   PASSWORD HELP TEXT
+========================================= */
+
+.input-group small {
+  display: block;
+
+  margin-top: 7px;
+
+  font-size: 14px;
+
+  color: #777777;
+}
+
+/* =========================================
+   REGISTER BUTTON
+========================================= */
+
+.register-btn {
+  width: 100%;
+
+  height: 62px;
+
+  margin-top: 3px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #008f16;
+
+  color: #ffffff;
+
+  font-size: 22px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.register-btn:hover {
+  background: #007a13;
+}
+
+.register-btn:active {
+  transform: scale(0.99);
+}
+
+.register-btn:disabled {
+  background: #72b87b;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+/* =========================================
+   LOGIN SECTION
+========================================= */
+
+.login-text {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 5px;
+
+  margin-top: 25px;
+
+  font-size: 17px;
+
+  color: #555555;
+}
+
+.login-text button {
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #008f16;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.login-text button:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   OLD MESSAGE
+   Toast is being used now, so this is
+   only here if you use message later.
+========================================= */
+
+.message {
+  margin-top: 15px;
+
+  padding: 12px 15px;
+
+  border-radius: 8px;
+
+  text-align: center;
+
+  font-size: 14px;
+}
+
+.message.success {
+  color: #008f16;
+
+  background: #edf9ef;
+}
+
+.message.error {
+  color: #d32f2f;
+
+  background: #fff0f0;
+}
+
+/* =========================================
+   TOAST POSITION
+========================================= */
+
+.go2072408551 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+  .register-page {
+    padding: 30px 0;
+  }
+
+  .register-right {
+    min-height: 100vh;
+
+    padding: 20px;
+  }
+
+  .register-card {
+    width: 680px;
+
+    max-width: 100%;
+
+    padding: 38px 40px 32px;
+
+    border-radius: 22px;
+  }
+
+  .blinkit-logo {
+    font-size: 52px;
+  }
+
+  .card-header h1 {
+    font-size: 26px;
+  }
+
+  .card-header p {
+    font-size: 17px;
+  }
+
+  .circle-right {
+    width: 200px;
+    height: 200px;
+  }
+
+  .circle-left {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 550px) {
+
+  html,
+  body,
+  #root {
+    overflow: auto;
+  }
+
+  .register-page {
+    min-height: 100vh;
+
+    padding: 25px 0;
+
+    align-items: flex-start;
+  }
+
+  .register-right {
+    min-height: auto;
+
+    padding: 15px;
+  }
+.register-card {
+  width: 650px;
+  max-width: 90%;
+  background: white;
+  padding: 25px 45px 28px;
+  border-radius: 20px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+  position: relative;
+  z-index: 5;
+}
+  .blinkit-logo {
+    font-size: 44px;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 14px;
+  }
+
+  .card-header {
+    margin-bottom: 25px;
+  }
+
+  .card-header h1 {
+    font-size: 24px;
+  }
+
+  .card-header p {
+    font-size: 15px;
+  }
+
+  .input-group {
+    margin-bottom: 18px;
+  }
+
+  .input-group label {
+    font-size: 16px;
+
+    margin-bottom: 7px;
+  }
+
+  .input-wrapper {
+    height: 55px;
+  }
+
+  .input-icon {
+    width: 55px;
+
+    font-size: 20px;
+  }
+
+  .input-wrapper input {
+    font-size: 16px;
+  }
+
+  .input-group small {
+    font-size: 12px;
+  }
+
+  .register-btn {
+    height: 56px;
+
+    font-size: 19px;
+  }
+
+  .login-text {
+    font-size: 15px;
+
+    margin-top: 22px;
+  }
+
+  .login-text button {
+    font-size: 15px;
+  }
+
+  .circle-right {
+    width: 150px;
+    height: 150px;
+
+    top: -50px;
+    right: -50px;
+  }
+
+  .circle-left {
+    width: 120px;
+    height: 120px;
+
+    left: -60px;
+  }
+}
