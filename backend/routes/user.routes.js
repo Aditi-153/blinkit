@@ -5,7 +5,7 @@ import { userProtect } from "../middleware/userAuth";
 
 const router = express.Router();
 
-router.post("/login",userProtect ,userLogin );
+router.post("/login",userLogin );
 router.post("/register", userRegister );
 router.post("/logout",userProtect, userLogout);
 

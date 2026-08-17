@@ -70,9 +70,9 @@ export const userRegister = async (req, res) => {
 
 export const userLogin = async (req, res) => {
   try {
-    const { email, name, password } = req.body;
+    const { email, password } = req.body;
 
-    if (!email || !name || !password) {
+    if (!email || !password) {
       return res.status(400).json({
         message: "all fields are required",
       });
@@ -115,7 +115,6 @@ export const userLogin = async (req, res) => {
       user: {
         id: existingUser._id,
         email: existingUser.email,
-        name: existingUser.name,
       },
     });
   } catch (error) {
